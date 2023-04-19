@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://krgta5eb7npj"]
+
+[ext_resource type="Script" path="res://Pixel.gd" id="1_i0dwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j676b"]
+size = Vector2(2, 2)
+
+[node name="Pixel" type="ColorRect"]
+anchors_preset = -1
+anchor_left = -0.001
+anchor_top = -0.003
+offset_left = -4.848
+offset_top = -4.056
+script = ExtResource("1_i0dwd")
+
+[node name="PXRN223322" type="Area2D" parent="."]
+position = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PXRN223322"]
+shape = SubResource("RectangleShape2D_j676b")
+
+[connection signal="area_entered" from="PXRN223322" to="." method="_on_enter"]
